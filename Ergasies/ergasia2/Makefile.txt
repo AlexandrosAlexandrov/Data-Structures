@@ -1,0 +1,21 @@
+#Makefile gia ergasia2
+
+CC=gcc
+CFLAGS=-c -Wall
+
+all: ergasia2
+
+ergasia2: main.o Option.o Session.0
+	$(CC) main.o Option.o Session.o -o ergasia2
+
+main.o: main.c
+	$(CC) $(CFLAGS) main.c
+
+Option.o: Option.c
+	$(CC) $(CFLAGS) Option.c
+
+Session.o: Session.c
+	$(CC) $(CFLAGS) Session.c
+
+clean:
+	rm -rf *o ergasia2

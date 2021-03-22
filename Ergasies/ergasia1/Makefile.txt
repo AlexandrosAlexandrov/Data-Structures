@@ -1,0 +1,24 @@
+#Makefile gia ergasia1
+
+CC=gcc
+CFLAGS=-c -Wall
+
+all: ergasia1
+
+ergasia1: main.o ch6_QArray.o TStoixeiouOuras.o TController.o
+	$(CC) main.o ch6_QArray.o TStoixeiouOuras.o TController.o -o ergasia1
+
+main.o: main.c
+	$(CC) $(CFLAGS) main.c
+
+ch6_QArray.o: ch6_QArray.c
+	$(CC) $(CFLAGS) ch6_QArray.c
+
+TStoixeiouOuras.o: TStoixeiouOuras.c
+	$(CC) $(CFLAGS) TStoixeiouOuras.c
+
+TController.o: TController.c
+	$(CC) $(CFLAGS) TController.c
+	
+clean:
+	rm -rf *o ergasia1
